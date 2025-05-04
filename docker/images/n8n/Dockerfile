@@ -9,6 +9,6 @@ RUN set -e \
  rm -rf /usr/local/lib/node_modules/n8n/node_modules/@types && \
  find /usr/local/lib/node_modules/n8n -type f \( -name "*.map" -o -name "*.vue" \) | xargs rm -f
 
+ENV N8N_HOST=0.0.0.0
 EXPOSE 5678
-
 CMD ["n8n"]
