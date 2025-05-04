@@ -1,10 +1,10 @@
 services:
   - type: web
     name: n8n
-    env: node
+    env: docker
     plan: free
-    buildCommand: npm run build
-    startCommand: n8n start
+    repo: https://github.com/n8n-io/n8n
+    dockerfilePath: ./docker/images/n8n/Dockerfile
     envVars:
       - key: N8N_BASIC_AUTH_ACTIVE
         value: true
@@ -19,4 +19,4 @@ services:
       - key: N8N_PROTOCOL
         value: http
       - key: WEBHOOK_URL
-        value: https://n8n.onrender.com/
+        value: https://n8n-<your-subdomain>.onrender.com
