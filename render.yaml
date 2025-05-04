@@ -1,9 +1,10 @@
 services:
   - type: web
     name: n8n
-    env: docker
+    env: node
     plan: free
-    dockerfilePath: ./docker/images/n8n/Dockerfile
+    buildCommand: npm run build
+    startCommand: npx n8n
     envVars:
       - key: N8N_BASIC_AUTH_ACTIVE
         value: true
